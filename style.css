@@ -1,0 +1,267 @@
+/* GENEL AYARLAR: Hacker fontu ve metin seçimi engeli */
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #050505;
+    color: #00ff00;
+    margin: 0;
+    padding: 0;
+    /* Metin seçmeyi engellemek için CSS önlemi */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* ÜST BİLGİ (HEADER) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0a0a0a;
+    border-bottom: 2px solid #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff003c;
+    text-shadow: 0 0 5px #ff003c;
+}
+
+/* ANA TAŞIYICI KUTU */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(0, 255, 0, 0.02);
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+}
+
+/* GİZLEME SINIFI (Ekranlar arası geçiş için hayati) */
+.hidden {
+    display: none !important;
+}
+
+/* INPUT VE SELECT KUTULARI */
+.cyber-input {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.cyber-input:focus {
+    box-shadow: 0 0 10px #00ff00;
+    background-color: #0a0a0a;
+}
+
+select.cyber-input option {
+    background-color: #000;
+    color: #00ff00;
+}
+
+/* BUTONLAR */
+.cyber-btn {
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.cyber-btn:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* UYARI BUTONU (Testi Bitir) */
+.warning-btn {
+    border-color: #ff003c;
+    color: #ff003c;
+    margin-top: 20px;
+}
+
+.warning-btn:hover {
+    background-color: #ff003c;
+    color: #000;
+    box-shadow: 0 0 10px #ff003c;
+}
+
+/* HATA MESAJLARI */
+.error-msg {
+    color: #ff003c;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* SORU BLOKLARI */
+.question-block {
+    border-left: 4px solid #00ff00;
+    padding-left: 20px;
+    margin-bottom: 35px;
+    background: rgba(0, 255, 0, 0.05);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.question-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.options-label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.options-label:hover {
+    background: rgba(0, 255, 0, 0.1);
+}
+
+/* RADIO BUTON RENGİ */
+input[type="radio"] {
+    accent-color: #00ff00;
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+/* KOD TESLİM KUTUSU (18. Soru) */
+.submission-box {
+    border: 1px dashed #00ff00;
+    padding: 20px;
+    background-color: #0a0a0a;
+    margin-top: 30px;
+}
+
+.submission-box h3 {
+    margin-top: 0;
+}
+
+/* SKOR TABLOSU VE İNCELEME */
+.score-board {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+    border: 2px solid #00ff00;
+    padding: 20px;
+    text-shadow: 0 0 8px #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+}
+
+.review-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #333;
+    background-color: #0a0a0a;
+}
+
+.correct-ans {
+    color: #00ff00;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.wrong-ans {
+    color: #ff003c;
+    text-decoration: line-through;
+    display: block;
+    margin-top: 5px;
+}
+
+/* GLITCH EFEKTİ (Havalı İsim Gösterimi) */
+.glitch-text {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #00ff00, -2px -2px #ff003c;
+    margin-bottom: 30px;
+}
+/* DİL BUTONU DÜZELTMESİ (Header) */
+#langToggle {
+    width: auto;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+/* ÖZEL ONAY EKRANI (MODAL) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-box {
+    background: #0a0a0a;
+    border: 2px solid #00ff00;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    max-width: 400px;
+}
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+/* --- ŞIKLARI ALT ALTA DİZME VE HİZALAMA --- */
+.options-container {
+    display: flex;
+    flex-direction: column; /* Şıkları alt alta dizer */
+    gap: 15px; /* Şıklar arasına nefes alacak boşluk bırakır */
+    margin-top: 15px;
+}
+
+.cyber-radio {
+    display: flex;
+    align-items: flex-start; /* Uzun metinlerde radio butonu hep en üstte tutar */
+    cursor: pointer;
+    line-height: 1.5; /* Okunabilirliği artırır */
+    padding: 8px; /* Tıklanma alanını genişletir */
+    transition: 0.3s;
+}
+
+/* Şıkların üzerine gelince hafif bir Matrix efekti (İsteğe bağlı) */
+.cyber-radio:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    border-radius: 5px;
+}
+
+.cyber-radio input {
+    margin-right: 12px;
+    margin-top: 4px; /* Yuvarlak buton ile metni jilet gibi hizalar */
+    transform: scale(1.2); /* Radio butonunu biraz büyütür */
+    cursor: pointer;
+}

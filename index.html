@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeQuest - Olympiad Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+    
+    <header>
+        <div class="logo">>_ CODEQUEST TERMINAL</div>
+        <div class="timer" id="timerDisplay">00:00</div>
+        <button id="langToggle" class="cyber-btn">[ EN / RU ]</button>
+    </header>
+
+    <div id="loginScreen" class="container">
+        <h2 id="loginTitle">[ SELECT YOUR PROFILE ]</h2>
+        <select id="studentSelect" class="cyber-input">
+            <option value="" id="optDefault">-- Select Profile --</option>
+            <option value="uran">Uran</option>
+            <option value="alihan">Alihan</option>
+            <option value="nursultan">Nursultan</option>
+            <option value="batyr">Batyr</option>
+            <option value="kamron">Kamron</option>
+            <option value="atai">Atai</option>
+            <option value="aliya">Aliya</option>
+            <option value="sofiya">Sofiya</option>
+            <option value="dastan">Dastan</option>
+        </select>
+        <br><br>
+        <input type="password" id="roomPin" class="cyber-input" placeholder="Write to Room PIN">
+        <br><br>
+        <button id="startBtn" class="cyber-btn">>>> START <<<</button>
+        <div id="loginError" class="error-msg"></div>
+    </div>
+
+    <div id="quizScreen" class="container hidden">
+        <h2 id="studentNameDisplay" class="glitch-text"></h2>
+        
+        <div id="questionsContainer"></div>
+        
+        <div class="submission-box hidden">
+            <h3 id="part3Title">[ PART 3: CODING CHALLENGE ]</h3>
+            <p id="linkInstruction">Paste your Codeforces/CodeChef "Accepted" submission link here:</p>
+            <input type="text" id="submissionLink" class="cyber-input" placeholder="https://codeforces.com/contest/.../submission/...">
+            <div id="linkWarning" class="error-msg hidden"></div>
+        </div>
+        
+        <br>
+        <button id="submitBtn" class="cyber-btn warning-btn">/// SUBMIT TEST ///</button>
+    </div>
+
+    <div id="resultScreen" class="container hidden">
+        <h2 id="resultTitle">[ SYSTEM LOG: RESULTS ]</h2>
+        <div id="scoreDisplay" class="score-board"></div>
+        
+        <div id="reviewContainer"></div>
+        
+        <br>
+        <button id="homeBtn" class="cyber-btn"><<< RETURN TO HOME</button>
+    </div>
+
+    <div id="customConfirm" class="modal-overlay hidden">
+        <div class="modal-box">
+            <h3 id="modalText">ARE YOU SURE? / ВЫ УВЕРЕНЫ?</h3>
+            <p id="modalSubText">Did you double check your answers and the submission link?</p>
+            <div class="modal-buttons">
+                <button id="modalYesBtn" class="cyber-btn warning-btn">YES / ДА</button>
+                <button id="modalNoBtn" class="cyber-btn">NO / НЕТ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
